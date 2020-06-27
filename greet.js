@@ -1,33 +1,67 @@
- /* const greetFact = greetFunction(nameMap);*/
 const nameElem = document.querySelector(".nameEntered");
-const languageElem = document.querySelector(".languageRadio");
-const greetBtn = document.querySelector(".greetBtn");
-const greetCounterElem = document.querySelector(".greetCounter");
+ const languageElem = document.querySelector(".languageRadio");
+ const greetBtn = document.querySelector(".greetBtn");
+ const greetCounterElem = document.querySelector(".greetCounter");
+ const greetings = document.querySelector(".greeting");
+ const namesInLocalStorage = localStorage['namesListed'];
+   let nameMap = null;
+   if (namesInLocalStorage) {
+     nameMap = JSON.parse(namesInLocalStorage);
+   }
+ 
+  
 
-const namesInLocalStorage = localStorage['namesListed'];
-  let nameMap = null;
-  if (namesInLocalStorage) {
-	nameMap = JSON.parse(namesInLocalStorage);
+ var greetTotal = 0;
+ var langItem = '';
+ var name = '';
+
+function language(name, langItem) {
+  //greet.validate(langItem, name)
+  if (name !== "" && langItem !== "") {
+      if (langItem === "English") {
+        greetTotal++
+          greeting = "Hello, " + name;
+      }
+      else if (langItem === "Afrikaans") {
+        greetTotal++
+          greeting = "Halo, " + name;
+      }
+      else if (langItem === "isiXhosa") {
+        greetTotal++
+          greeting = "Molo, " + name;
+      }
   }
-
-function greetBtnClicked(){
-    var checkedRadioBtn = document.querySelector("input[name='langItem']:checked");
-    var langItem = checkedRadioBtn.value;
-    var name = nameElem.value;
-    const greeting = greet(name);
-    greetCounterElem.innerHTML = greetTotal;
+  return greeting
 }
 
-var greetTotal = 0;
+
+
 greetBtn.addEventListener('click', function(){
-    greetTotal++;
-    let name;
-	  if (nameElem && nameElem.value) {
-      name = nameEntered.value;
-	  } else {
-		return;
-    }
-    /*message.innerHTML = greetFact.greet(name);*/
+
+  var checkedRadioBtn = document.querySelector("input[name='langItem']:checked");
+  var langItem = checkedRadioBtn.value;
+  var name = nameElem.value;
+  greetings.innerHTML = "";
+  greetings.innerHTML = language(name, langItem);
+  greetCounterElem.innerHTML = greetTotal;
+
   
-    localStorage['namesListed'] = JSON.stringify(greetFact.namesListed());
 });
+
+//greetBtn.addEventListener('click', greetBtnClicked);
+
+const greetFact = greetFact(nameState);
+
+
+ /*greetBtn.addEventListener('click', function(){
+
+     let name;
+       if (nameEntered && nameEntered.value) {
+       name = nameEntered.value;
+       } else {
+         return;
+     }
+     greetings.innerHTML = greetFact.greet(name);
+   
+     localStorage['namesListed'] = JSON.stringify(greetFact.allNames());
+ });*/
