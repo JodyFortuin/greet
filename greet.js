@@ -42,15 +42,23 @@ greetBtn.addEventListener('click', function(){
   var langItem = checkedRadioBtn.value;
   var name = nameElem.value;
   greetings.innerHTML = "";
-  greetings.innerHTML = language(name, langItem);
+  
   greetCounterElem.innerHTML = greetTotal;
+
+  let name;
+       if (nameEntered && nameEntered.value) {
+       name = nameEntered.value;
+       } else {
+         return;
+     }
+  greetings.innerHTML = language(name, langItem);
 
   
 });
 
 //greetBtn.addEventListener('click', greetBtnClicked);
 
-const greetFact = greetFact(nameState);
+const greetFact = greetFact(savedState);
 
 
  /*greetBtn.addEventListener('click', function(){
@@ -61,7 +69,8 @@ const greetFact = greetFact(nameState);
        } else {
          return;
      }
-     greetings.innerHTML = greetFact.greet(name);
+     greetings.innerHTML = language(name, langItem);
    
      localStorage['namesListed'] = JSON.stringify(greetFact.allNames());
  });*/
+ 
