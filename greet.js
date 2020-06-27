@@ -9,7 +9,6 @@ const nameElem = document.querySelector(".nameEntered");
      nameMap = JSON.parse(namesInLocalStorage);
    }
  
-  
 
  var greetTotal = 0;
  var langItem = '';
@@ -40,17 +39,16 @@ greetBtn.addEventListener('click', function(){
 
   var checkedRadioBtn = document.querySelector("input[name='langItem']:checked");
   var langItem = checkedRadioBtn.value;
-  var name = nameElem.value;
   greetings.innerHTML = "";
-  
   greetCounterElem.innerHTML = greetTotal;
 
   let name;
-       if (nameEntered && nameEntered.value) {
-       name = nameEntered.value;
-       } else {
-         return;
-     }
+  if (nameElem && nameElem.value) {
+  name = nameElem.value;
+  } else {
+    return;
+}
+  
   greetings.innerHTML = language(name, langItem);
 
   
@@ -59,18 +57,7 @@ greetBtn.addEventListener('click', function(){
 //greetBtn.addEventListener('click', greetBtnClicked);
 
 const greetFact = greetFact(savedState);
-
-
- /*greetBtn.addEventListener('click', function(){
-
-     let name;
-       if (nameEntered && nameEntered.value) {
-       name = nameEntered.value;
-       } else {
-         return;
-     }
-     greetings.innerHTML = language(name, langItem);
    
-     localStorage['namesListed'] = JSON.stringify(greetFact.allNames());
- });*/
+   //  localStorage['namesListed'] = JSON.stringify(greetFact.allNames());
+
  
