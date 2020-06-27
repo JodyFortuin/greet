@@ -1,5 +1,5 @@
-function greetFact(nameState){
-    var namesListedMap = nameState || {};
+function greetFact(savedState){
+    var namesListedMap = savedState || {};
 
 const namesListedMap = document.createElement(li);{
 li.innerHTML = nameEntered.value;
@@ -20,6 +20,7 @@ function allNames(){
 return {
     greet,
     allNames,
+ 
 };
 
 }
