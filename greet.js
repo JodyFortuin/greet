@@ -8,8 +8,9 @@ const nameElem = document.querySelector(".nameEntered");
    if (namesInLocalStorage) {
      nameMap = JSON.parse(namesInLocalStorage);
    }
- 
+  
 
+ nameElem.value = "";
  var greetTotal = 0;
  var langItem = '';
  var name = '';
@@ -48,17 +49,15 @@ greetBtn.addEventListener('click', function(){
   } else {
     return;
 }
-  
   greetings.innerHTML = language(name, langItem);
 
-  
+  localStorage['namesListed'] = JSON.stringify(GreetFact.allNames());
 });
 
 //greetBtn.addEventListener('click', greetBtnClicked);
 
-const greetFact = greetFact(savedState);
+ const GreetFact = greetFact(nameMap);
    
    //  localStorage['namesListed'] = JSON.stringify(greetFact.allNames());
 
  
-
