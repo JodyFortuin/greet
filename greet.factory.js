@@ -1,11 +1,12 @@
 function greetFact(savedState){
-    var namesListedMap = savedState || {};
+  
 
-const namesListedMap = document.createElement(li);{
-li.innerHTML = nameEntered.value;
-names.appendChild(li);
-nameEntered.value = '';
-}
+const namesListedMap = savedState || document.createElement("li");
+li.innerHTML = nameElem.value;
+var t = document.createTextNode("li");
+name.appendChild(t);
+nameElem.value = '';
+
 
 function greet(name) {
     if (namesListedMap[name] === undefined){
