@@ -15,7 +15,7 @@ const nameElem = document.querySelector(".nameEntered");
  var name = '';
 
 function language(name, langItem) {
-  //greet.validate(langItem, name)
+
   if (name !== "" && langItem !== "") {
       if (langItem === "English") {
         greetTotal++
@@ -61,3 +61,4 @@ const greetFact = greetFact(savedState);
    //  localStorage['namesListed'] = JSON.stringify(greetFact.allNames());
 
  
+
