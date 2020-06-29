@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="greet.css">
+    <script src="greet.factory.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -11,29 +12,31 @@
     <div class="greet textbox">
 
           <label for="">Bill type</label>
-          <input type="text" name="langItem" value="" placeholder="enter name " class="nameEntered">
+          <input type="text" name="nameItem" value="" placeholder="enter name " class="nameEntered">
+          <button class="button-primary greetBtn" type="button" name="button" >Greet me</button>
           <span class="greetCounter">0</span>
     </div>
 
-    <div>
-          <button class="button-primary greetBtn" type="button" name="button" >Greet me</button>
-    </div>
+    <div class="greeting"></div>
 
+<li id = "li"></li>
+    
       <div class="greet radio">
         <label class="">
-          <input type="radio" name="langItem" class="LanguageRadio" value="n">
+          <input type="radio" name="langItem" class="languageRadio" value="English">
           <span class="label-body">English</span>
         </label>
         <label class="">
-          <input type="radio" name="langItem" class="LanguageRadio" value="n">
-          <span class="label-body" >Afrikaans</span>
+          <input type="radio" name="langItem" class="languageRadio" value="Afrikaans">
+          <span class="label-body">Afrikaans</span>
         </label>
         <label class="">
-            <input type="radio" name="billItemType" class="LanguageRadio" value="n">
-            <span class="label-body" >isiXhosa</span>
+            <input type="radio" name="langItem" class="languageRadio" value="isiXhosa">
+            <span class="label-body">isiXhosa</span>
           </label>
       </div>
       <script src="greet.js"></script>
+      
 </body>
 
 </html>
