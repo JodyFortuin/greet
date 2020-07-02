@@ -1,63 +1,35 @@
-const nameElem = document.querySelector(".nameEntered");
- const languageElem = document.querySelector(".languageRadio");
- const greetBtn = document.querySelector(".greetBtn");
- const greetCounterElem = document.querySelector(".greetCounter");
- const greetings = document.querySelector(".greeting");
- const namesInLocalStorage = localStorage['namesListed'];
-   let nameMap = null;
-   if (namesInLocalStorage) {
-     nameMap = JSON.parse(namesInLocalStorage);
-   }
-  
+const greetBtn = document.querySelector(".greetBtn")
+const resetBtn = document.querySelector(".resetBtn")
+const greetings = document.querySelector(".greeting")
+const greetCounterElem = document.querySelector(".greetCounter")
+const nameElem = document.querySelector(".nameEntered")
 
- nameElem.value = "";
- var greetTotal = 0;
- var langItem = '';
- var name = '';
+  var savedState = localStorage['namesListed'] ? JSON.parse(localStorage['namesListed']) : {};
 
-function language(name, langItem) {
+  var GreetFact = greetFactory(savedState);
 
-  if (name !== "" && langItem !== "") {
-      if (langItem === "English") {
-        greetTotal++
-          greeting = "Hello, " + name;
-      }
-      else if (langItem === "Afrikaans") {
-        greetTotal++
-          greeting = "Halo, " + name;
-      }
-      else if (langItem === "isiXhosa") {
-        greetTotal++
-          greeting = "Molo, " + name;
-      }
-  }
-  return greeting
+function reset(){
+  GreetFact.reset();
+  window.location.reload(true);
+  localStorage.clear('namesListed');
 }
 
+resetBtn.addEventListener('click', reset);
 
-
-greetBtn.addEventListener('click', function(){
-
-  var checkedRadioBtn = document.querySelector("input[name='langItem']:checked");
-  var langItem = checkedRadioBtn.value;
-  greetings.innerHTML = "";
-  greetCounterElem.innerHTML = greetTotal;
-
-  let name;
-  if (nameElem && nameElem.value) {
-  name = nameElem.value;
-  } else {
-    return;
+greetBtn.addEventListener("click", function () {
+    var nameEntered = nameElem.value;
+    var checkedRadioBtn = document.querySelector("input[name='langItem']:checked");
+    if (checkedRadioBtn) {
+      var langItem = checkedRadioBtn.value;
+        var name = GreetFact.regex(nameEntered)
+        if (name !== "") {
+            GreetFact.addMap(name);
+            greetings.innerHTML = GreetFact.language(name, langItem)
+            greetCounterElem.innerHTML = GreetFact.greetTotal();
+            localStorage['namesListed'] = JSON.stringify(GreetFact.allNames());
+    }
 }
-  greetings.innerHTML = language(name, langItem);
-
-  localStorage['namesListed'] = JSON.stringify(GreetFact.allNames());
 });
 
-//greetBtn.addEventListener('click', greetBtnClicked);
 
- const GreetFact = greetFact(nameMap);
-   
-   //  localStorage['namesListed'] = JSON.stringify(greetFact.allNames());
 
- 
