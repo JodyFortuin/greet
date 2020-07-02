@@ -6,7 +6,7 @@ const nameElem = document.querySelector(".nameEntered")
 
   var savedState = localStorage['namesListed'] ? JSON.parse(localStorage['namesListed']) : {};
 
-  var GreetFact = greetFactory(savedState);
+  const GreetFact = greetFactory(savedState);
 
 function reset(){
   GreetFact.reset();
