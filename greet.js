@@ -29,7 +29,7 @@ greetBtn.addEventListener("click", function () {
         if (name !== "") {
             GreetFact.addMap(name);
             greetings.innerHTML = GreetFact.language(name, langItem)
-            greetCounterElem.innerHTML = GreetFact.greetTotal();
+            greetCounterElem.innerHTML = GreetFact.countNames();
             localStorage['namesListed'] = JSON.stringify(GreetFact.allNames());
     } else {
       greetings.innerHTML = "please enter a name"
