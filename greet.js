@@ -32,9 +32,9 @@ greetBtn.addEventListener("click", function () {
             greetCounterElem.innerHTML = GreetFact.greetTotal();
             localStorage['namesListed'] = JSON.stringify(GreetFact.allNames());
     } else {
-      greetings.innerHTML = "please name"
+      greetings.innerHTML = "please enter a name"
     }
 } else {
-  greetings.innerHTML = "please radio"
+  greetings.innerHTML = "please choose a language"
 }
 });
