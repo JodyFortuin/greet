@@ -40,24 +40,26 @@ describe("Greet Unit Test", function() {
 
   });
 
-  it("should count unique names greeted (1) (greet counter)", function() {
+  it("should add a new name to local storage with a value of one", function() {
 
     var greetName = greetFactory();
 
-    greetName.language('Julien', 'English');
+    greetName.addMap('James');
 
-    assert.deepEqual(greetName.addMap({'Julien': 1}));
-    assert.equal(1, greetName.greetTotal());
+    assert.deepEqual(greetName.allNames(),{'James': 1});
+
 
   });
 
-  it("should add a new name to local storage with a value of one (addMap)", function() {
+  it("should return the count of names greeted (3)", function() {
 
     var greetName = greetFactory();
 
-    greetName.language('Julien', 'English');
+    greetName.addMap('Jody');
+    greetName.addMap('Julien');
+    greetName.addMap('James');
 
-    assert.deepEqual(greetName.addMap({'Julien': 1}));
+    assert.equal(3, greetName.greetTotal());
 
   });
 
