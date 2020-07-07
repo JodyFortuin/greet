@@ -50,7 +50,7 @@ function greetFactory(savedState) {
         reset,
         addMap,
         language,
-        countNames,
+        countNames, 
         regex,
         allNames,
     }
