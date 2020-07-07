@@ -59,7 +59,7 @@ describe("Greet Unit Test", function() {
     greetName.addMap('Julien');
     greetName.addMap('James');
 
-    assert.equal(3, greetName.greetTotal());
+    assert.equal(3, greetName.countNames());
 
   });
 
