@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-  greetCounterElem.innerHTML = GreetFact.greetTotal();
+  greetCounterElem.innerHTML = GreetFact.countNames();
 });
 
 const greetBtn = document.querySelector(".greetBtn")
