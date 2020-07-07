@@ -38,7 +38,7 @@ function greetFactory(savedState) {
         var characters = /[^A-Za-z]/g;
         if (nameInput !== "") {
         var newName = nameInput.replace(characters, "")
-        var capital = newName[0].toUpperCase() + newName.slice(1);
+        var capital = newName[0].toUpperCase() + newName.slice(1).toLowerCase();
         return capital;
      }
     return "";
