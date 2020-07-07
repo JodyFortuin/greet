@@ -4,12 +4,6 @@ function greetFactory(savedState) {
 
     function reset() {
         namesListedMap = {};
-    }function greetFactory(savedState) {
-
-    var namesListedMap = savedState || {};
-
-    function reset() {
-        namesListedMap = {};
     }
 
     function addMap(name) {
