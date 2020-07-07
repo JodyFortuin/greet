@@ -4,6 +4,12 @@ function greetFactory(savedState) {
 
     function reset() {
         namesListedMap = {};
+    }function greetFactory(savedState) {
+
+    var namesListedMap = savedState || {};
+
+    function reset() {
+        namesListedMap = {};
     }
 
     function addMap(name) {
@@ -27,7 +33,7 @@ function greetFactory(savedState) {
         return greeting
       }
 
-     function countNames() {
+    function countNames() {
         var greetTotal = Object.keys(namesListedMap)
         return greetTotal.length;
     }
