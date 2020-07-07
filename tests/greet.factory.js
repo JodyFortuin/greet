@@ -13,7 +13,6 @@ function greetFactory(savedState) {
     } 
 
     function language(name, langItem) {
-
         if (name !== "" && langItem !== "") {
             if (langItem === "English") {
                 greeting = "Hello, " + name;
@@ -23,10 +22,12 @@ function greetFactory(savedState) {
             }
             else if (langItem === "isiXhosa") {
                 greeting = "Molo, " + name;
-            }
+            } 
         }
         return greeting
       }
+
+      
 
     function greetTotal() {
         var greetTotal = Object.keys(namesListedMap)
@@ -37,7 +38,8 @@ function greetFactory(savedState) {
         var characters = /[^A-Za-z]/g;
         if (nameInput !== "") {
         var newName = nameInput.replace(characters, "")
-        return newName;
+        var capital = newName[0].toUpperCase() + newName.slice(1);
+        return capital;
      }
     return "";
     }
