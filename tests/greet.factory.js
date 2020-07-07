@@ -27,9 +27,7 @@ function greetFactory(savedState) {
         return greeting
       }
 
-      
-
-    function greetTotal() {
+     function countNames() {
         var greetTotal = Object.keys(namesListedMap)
         return greetTotal.length;
     }
@@ -52,7 +50,7 @@ function greetFactory(savedState) {
         reset,
         addMap,
         language,
-        greetTotal,
+        countNames,
         regex,
         allNames,
     }
